@@ -1,0 +1,23 @@
+site_name: Life Systems
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Money System:
+    - Introduction: money-system/introduction.md
+    - Overview: money-system/overview.md
+    - About: money-system/about.md
+    - Income Split: money-system/income-split.md
+    - Emergency Fund: money-system/emergency-fund.md
+    - Investing Basics: money-system/investing-basics.md
+    - Paying Taxes: money-system/paying-taxes.md
+  - Networking / Tech:
+    - Overview: tech/overview.md
+    - Systems Integration: tech/systems-integration.md
+    - VLAN Guide: tech/vlan.md
+    - Camera System: tech/cameras.md
+  - Business (Future):
+    - Overview: business/overview.md
+    - Starting a Business: business/starting.md
+    - Running a Business: business/running.md
+    - Growing a Business: business/growing.md
