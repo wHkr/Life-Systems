@@ -2,6 +2,7 @@ site_name: Life Systems
 theme:
   name: material
 nav:
+  - test: test.md
   - Home: index.md
   - Money System:
     - Introduction: money-system/introduction.md
@@ -24,8 +25,6 @@ nav:
 plugins:
   - search
   - mermaid2
+
 markdown_extensions:
   - pymdownx.superfences
-extra_javascript:
-  - https://unpkg.com/mermaid/dist/mermaid.min.js
-  - javascripts/mermaid.js
