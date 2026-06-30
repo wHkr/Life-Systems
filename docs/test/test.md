@@ -1,209 +1,445 @@
-# Mermaid Test
 
-# 🧜 Mermaid Laboratory
+<div class="lab-hero">
 
-> Welcome to the Mermaid showcase for **Life Systems**.
->
-> This page demonstrates diagrams, Material for MkDocs components, colors,
-> icons, tabs, buttons, and interactive callouts that can be reused
-> throughout the engineering documentation.
+<div class="lab-subtitle">
+
+Engineering Laboratory
+
+</div>
+
+# 🖧 Relationship Diagrams
+
+Visualizing systems, communication, and infrastructure using engineering-quality diagrams.
+
+</div>
+
+!!! abstract "Learning Objectives"
+
+    By the end of this laboratory you will be able to
+
+    - Read relationship diagrams
+    - Design enterprise diagrams
+    - Label interfaces
+    - Label VLANs
+    - Apply engineering color standards
+---
+
+## Quick Example
+
+The following diagram demonstrates a simple enterprise network.
+
+Notice how:
+
+- Devices are grouped by responsibility.
+- Trust boundaries are clearly visible.
+- Infrastructure flows left-to-right.
+- Colors distinguish functional areas.
+
+<div class="diagram">
+
+    ```mermaid
+    flowchart LR
+    Internet --> Router
+    Router --> Firewall
+    Firewall --> Core
+    Core --> Docker
+    Core --> Storage
+    ```
+
+</div>
+
+
+## 🖧 Enterprise Network Example
+
+<div class="diagram-card">
+
+    ```mermaid
+    flowchart LR
+
+    Internet["🌎 Internet"]
+    Router["📡 Router"]
+    Firewall["🛡️ Firewall"]
+    Core["🖧 Core Switch"]
+    Docker["🐳 Docker"]
+    NAS["💾 NAS"]
+
+    Internet --> Router
+    Router --> Firewall
+    Firewall --> Core
+    Core --> Docker
+    Core --> NAS
+
+    classDef wan fill:#00b5bb,color:white
+    classDef infra fill:#3f51b5,color:white
+    classDef compute fill:#4caf50,color:white
+
+    class Internet wan
+    class Router,Firewall,Core infra
+    class Docker,NAS compute
+    ...
+    ```
+
+</div>
+
+
+<div class="legend-grid">
+
+<div class="legend-card">
+
+### 🌎 WAN
+
+Internet
+
+ISP
+
+Cloud
+
+</div>
+
+<div class="legend-card">
+
+### 🛡 Security
+
+Firewall
+
+IDS
+
+VPN
+
+</div>
+
+<div class="legend-card">
+
+### 🖧 Infrastructure
+
+Router
+
+Switch
+
+Core
+
+</div>
+
+<div class="legend-card">
+
+### 🐳 Compute
+
+Docker
+
+NAS
+
+NVR
+
+</div>
+
+</div>
+
+
+
+## 🎨 Color Legend
+
+
+| Color | Purpose | Example |
+|:------:|:--------:|:--------:|
+| 🟦 **Teal** | Internet / WAN | ISP, Cloud |
+| 🔴 **Red** | Security | Firewall, IDS |
+| 🔵 **Blue** | Network Infrastructure | Core & Access Switches |
+| 🟢 **Green** | Compute & Storage | Docker, NAS, NVR |
+| 🟡 **Yellow** | End Devices | PCs, Cameras, Phones |
+| 🟣 **Purple** | Management | Controllers, Monitoring |
+
+
+## 🧱 Device Shapes
+
+| Shape | Use |
+|------|------|
+| Rectangle | Servers |
+| Stadium | Clients |
+| Circle | Internet |
+| Diamond | Decisions |
+| Cylinder | Storage |
+| Hexagon | Security |
+
+
+## 🔌 Port Naming
+
+!!! tip "Use Real Interface Names"
+
+    Label links using the interface names found on the actual equipment.
+
+=== "Router"
+
+    ```
+    WAN
+    LAN1
+    LAN2
+    LAN3
+    LAN4
+    ```
+
+=== "Cisco"
+
+    ```
+    Gi1/0/1
+    Gi1/0/2
+    Gi1/0/24
+    Te1/1/1
+    ```
+
+=== "PoE Switch"
+
+    ```
+    PoE1
+    PoE2
+    PoE8
+    PoE16
+    PoE24
+    ```
+
+=== "NVR"
+
+    ```
+    LAN
+    HDMI
+    USB
+    PoE1
+    PoE16
+    ```
+
+
+## Engineering Standards
+
+<ul class="checklist">
+
+<li>Label every interface.</li>
+
+<li>Label every VLAN.</li>
+
+<li>Label every trunk.</li>
+
+<li>Show trust boundaries.</li>
+
+<li>Use consistent colors.</li>
+
+<li>Keep diagrams flowing left → right.</li>
+
+<li>Group similar infrastructure.</li>
+
+</ul>
+
+
+## 🧪 Practice
+
+!!! example "Exercise 1"
+    {: .exercise}
+
+    ### Objective
+        Add a second access switch.
+
+    **Requirements**
+
+    - Connect it to the Core Switch.
+    - Label the uplink.
+    - Add VLAN 20.
+    - Add four PoE cameras.
+
+    ??? success "Possible Solution"
+
+        *(Leave empty until you've attempted it.)*
+
+---
+
+!!! example "Exercise 2"
+
+    ### Scenario
+
+    Your company has purchased a second switch.
+
+    **Your tasks**
+
+    - Add the switch.
+    - Connect it using **Gi1/0/23**.
+    - Add **VLAN 30**.
+    - Connect four cameras.
+    - Color the switch blue.
+
+---
+
+!!! example "Exercise 3"
+
+    Add VLAN 10, 20 and 30.
+
+---
+
+!!! example "Exercise 4"
+
+    Add an isolated management network.
+
+
+!!! warning "Engineering Challenge"
+    {: .challenge}
+
+    Build the entire diagram from memory.
+
+    Add:
+
+    - Interface labels
+    - VLAN IDs
+    - Colors
+    - Classes
+
+
+## 🏆 Challenge
+
+Recreate the following from memory:
+
+```mermaid
+---
+title: Challenge -- Recreate using memory
+---
+
+flowchart TB
+
+Internet["🌎 Internet"]
+Firewall["🛡️ Firewall"]
+Core["🖧 Core Switch"]
+Docker["🐳 Docker"]
+NAS["💾 NAS"]
+SwitchA["Switch A"]
+SwitchB["Switch B"]
+
+Internet --> Firewall
+Firewall --> Core
+Core --> Docker
+Core --> NAS
+Core --> SwitchA
+Core --> SwitchB
+```
+
+Rebuild this diagram using:
+- "interface labels"
+- "VLAN labels"
+- "Colors"
+- "Device classes"
+
+
+## 🔬 Diagram Autopsy
+
+Time to take things apart
+
+For example:
+```mermaid
+flowchart LR
+Internet["🌎 Internet"]
+```
+> Represents the untrusted WAN.
 
 ---
 
 ```mermaid
 flowchart LR
-
-Internet["🌎 Internet"]
 Router["📡 Router"]
-Firewall["🛡️ Firewall"]
-Core["🖧 Core Switch"]
-Docker["🐳 Docker Host"]
-Storage["💾 NAS"]
-
-Internet --> Router
-Router --> Firewall
-Firewall --> Core
-Core --> Docker
-Core --> Storage
-
-classDef internet fill:#00b5bb,color:#fff,stroke:#005b66,stroke-width:3px
-classDef network fill:#3a86ff,color:#fff
-classDef server fill:#6a4c93,color:#fff
-classDef storage fill:#8ac926,color:#000
-
-class Internet internet
-class Router,Firewall,Core network
-class Docker server
-class Storage storage
 ```
-
-
-
+> Layer 3 boundary between the ISP and the local network.
 
 ```mermaid
-graph LR
-    A --> B
+flowchart LR
+Firewall["🛡️ Firewall"]
+```
+> Security enforcement point.
+
+```mermaid
+flowchart LR
+Core["🖧 Core Switch"]
+```
+> Central aggregation  switch.
+
+```mermaid
+flowchart LR
+
+Docker["🐳 Docker Host"]
+```
+> Compute node running containers.
+
+---
+
+## 📚 Key Takeaways
+
+By completing this laboratory you learned how to:
+
+- Build relationship diagrams.
+- Label interfaces correctly.
+- Document VLANs.
+- Apply engineering color conventions.
+- Design reusable Mermaid diagrams.
+
+➡ Continue to **Flowcharts** to learn process visualization.
+
+### Rules on nesting languages
+
+#### The Rule
+
+```markdown
+Markdown
+
+↓
+
+HTML
+
+↓
+
+Mermaid
+
+↓
+
+End Mermaid
+
+↓
+
+End HTML
+
+↓
+
+Markdown
 ```
 
+#### The Visualization
 
-??? note
+```markdown
+Markdown
+│
+├── Heading
+│
+├── Paragraph
+│
+├── HTML Card
+│   │
+│   ├── Mermaid Diagram
+│   │
+│   └── End Card
+│
+├── Paragraph
+│
+├── Admonition
+│
+└── Table
+```
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+#### The Order of Operations
 
-???+ info "Engineering Philosophy"
+> At least get one thing working if nothing is going your way.
 
-    Documentation should explain **how a system works**, not simply describe
-    what exists.
+```markdown
+## Test Card
 
-    Good documentation answers:
-
-    - Why does it exist?
-    - How does data flow?
-    - What breaks if this component fails?
-    - Where does security fit?
-
-    ??? success "Example"
-
-        Every networking document in **Life Systems** should include a
-        Mermaid architecture diagram whenever appropriate.
-
-
-!!! tip inline end "💡 Documentation Tip"
-
-    Mermaid diagrams should show **relationships**, not implementation details.
-
-!!! warning inline "⚠️ Keep it Simple"
-
-    If your Mermaid diagram has more than about 25 nodes,
-    consider breaking it into multiple diagrams.
-
-
-!!! pied-piper "Pied Piper"
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
-    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-    purus auctor massa, nec semper lorem quam in massa.
-
-## Buttons
-
-[🏠 Home](../index.md){ .md-button .md-button--primary }
-
-[📚 Networking](../tech/overview.md){ .md-button }
-
-[🐳 Docker](../docker.md){ .md-button }
-
-[⚙️ Mermaid Docs](https://mermaid.js.org){ .md-button }
-
-## Admonations
-
-!!! example "Packet Flow"
+<div class="diagram-card">
 
     ```mermaid
     flowchart LR
 
-    Laptop["💻 Laptop"]
-    Router["📡 Router"]
-    Firewall["🛡️ Firewall"]
-    Docker["🐳 Docker"]
-
-    Laptop --> Router --> Firewall --> Docker
+    Internet --> Router
+    Router --> Firewall
+    Firewall --> Core
     ```
 
-
-## Callout Styles
-
-!!! note "General Note"
-    Documentation for everyone.
-
-!!! abstract "Architecture"
-    High-level system overview.
-
-!!! info "Information"
-    Useful background knowledge.
-
-!!! tip "Best Practice"
-    Recommended workflow.
-
-!!! success "Completed"
-    Deployment succeeded.
-
-!!! question "Think About"
-    What happens if the firewall fails?
-
-!!! warning "Warning"
-    Opening unnecessary ports increases attack surface.
-
-!!! failure "Failure"
-    Build failed because dependencies are missing.
-
-!!! danger "Danger"
-    Never expose your Docker socket to the Internet.
-
-!!! bug "Bug"
-    Mermaid rendered incorrectly because of malformed syntax.
-
-!!! example "Example"
-    A practical implementation.
-
-!!! quote "Engineering Principle"
-    "Simple systems are easier to maintain."
-
-
-## Better Tabs
-
-### Configuration Examples
-
-=== "Docker"
-
-    ```yaml
-    services:
-      app:
-        image: nginx
-    ```
-
-=== "Python"
-
-    ```python
-    print("Hello Engineering")
-    ```
-
-=== "PowerShell"
-
-    ```powershell
-    docker compose up -d
-    ```
-
-=== "Linux"
-
-    ```bash
-    docker compose logs -f
-    ```
-
-## Nested Tabs
-
-!!! example
-
-    === "Unordered List"
-
-        ``` markdown
-        * Sed sagittis eleifend rutrum
-        * Donec vitae suscipit est
-        * Nulla tempor lobortis orci
-        ```
-
-    === "Ordered List"
-
-        ``` markdown
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
-        ```
-
-
-
-
-
-
-
+</div>

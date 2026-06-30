@@ -1,6 +1,7 @@
 site_name: Life Systems
 theme:
   name: material
+  system: dark
   icon:
     admonition:
       note: fontawesome/solid/note-sticky
@@ -16,13 +17,6 @@ theme:
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
 nav:
-  - test:
-    - test.md: test/test.md
-    - diagrams.md: test/diagrams.md
-    - grids.md: test/grids.md
-    - lists.md: test/lists.md
-    - data.md: test/data.md
-    - math.md: test/math.md
   - Home: index.md
   - Money System:
     - Introduction: money-system/introduction.md
@@ -57,34 +51,44 @@ nav:
   - AI: ai/overview.md
   - Engineering Lab:
     - Overview: engineering-lab/overview.md
-      Experiments:
-        - Mermaid:
-        - CSS:
-        - Icons:
-        - JavaScript:
-      Templates:
-        - Network Architecture:
-        - Docker Architecture:
-        - VLAN Documentation:
-        - API Flow:
-        - Database Layout:
-        - Security Review:
-    - Relationship Diagrams: engineering-lab/relationship-diagrams.md
-    - Flowcharts:
-    - Sequence Diagrams:
-    - ER Diagrams:
-    - Mind Maps:
-    - Material Components:
-    - CSS Experments:
-    - Icons
-    - Mermaid Playground:
+    - Experiments:
+        - Mermaid: engineering-lab/experiments/mermaid/mermaid.md
+        - CSS: engineering-lab/experiments/css/css.md
+        - Icons: engineering-lab/experiments/icons/icons.md
+        - JavaScript: engineering-lab/experiments/javascript/javascript.md
     - Templates:
+        - Network Architecture: engineering-lab/templates/network-architecture/network-architecture.md
+        - Docker Architecture: engineering-lab/templates/docker-architecture/docker-architecture.md
+        - VLAN Documentation: engineering-lab/templates/vlan-documentation/vlan-documentation.md
+        - API Flow: engineering-lab/templates/api-flow/api-flow.md
+        - Database Layout: engineering-lab/templates/database-layout/database-layout.md
+  - test:
+    - test.md: test/test.md
+    - diagrams.md: test/diagrams.md
+    - grids.md: test/grids.md
+    - lists.md: test/lists.md
+    - data.md: test/data.md
+    - math.md: test/math.md
+    - Relationship Diagrams: test/relationship-diagrams.md
+    - Flowcharts: test/flowcharts.md
+    - Sequence Diagrams: test/sequence-diagrams.md
+    - ER Diagrams: test/er-diagrams.md
+    - Mind Maps: test/mind-maps.md
+    - Material Components: test/material-components.md
+    - CSS Experments: test/css-experiments.md
+    - Icons: test/icons.md
+    - Mermaid Playground: test/mermaid-playground.md
+    - Templates: test/templates.md
 
 plugins:
   - search
 
+extra_javascript:
+  - javascripts/mermaid-init.js
+
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/engineering-lab.css
 
 markdown_extensions:
   - attr_list

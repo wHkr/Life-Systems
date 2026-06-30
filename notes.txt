@@ -14,3 +14,8 @@ Boiletplate info for index.md {
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 }
+
+## TODO
+
+- [ ] Make a `.diagram` CSS card
+- [ ] 
