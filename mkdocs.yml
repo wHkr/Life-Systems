@@ -18,6 +18,7 @@ theme:
       quote: fontawesome/solid/quote-left
 nav:
   - Home: index.md
+
   - Money System:
     - Introduction: money-system/introduction.md
     - Overview: money-system/overview.md
@@ -26,38 +27,72 @@ nav:
     - Emergency Fund: money-system/emergency-fund.md
     - Investing Basics: money-system/investing-basics.md
     - Paying Taxes: money-system/paying-taxes.md
+
   - Networking / Tech:
     - Overview: tech/overview.md
     - Systems Integration: tech/systems-integration.md
     - VLAN Guide: tech/vlan.md
     - Camera System: tech/cameras.md
+
   - Business (Future):
     - Overview: business/overview.md
     - Starting a Business: business/starting.md
     - Running a Business: business/running.md
     - Growing a Business: business/growing.md
+
   - Linux:
-    - Overview: linux/overview.md
-    - Installation: linux/installation.md
-    - Configuration: linux/configuration.md
-    - Maintenance: linux/maintenance.md
-    - Troubleshooting: linux/troubleshooting.md
-  - Docker:
-    - Overview: docker/overview.md
-    - Installation: docker/installation.md
-    - Configuration: docker/configuration.md
-    - Maintenance: docker/maintenance.md
-    - Troubleshooting: docker/troubleshooting.md
+    - Documentation:
+        - linux/documentation/wsl_zsh-getting-started-1.md
+        - linux/documentation/wsl-zshrc_config-2.md
+        - linux/documentation/wsl_zsh-tools-config-3.md
+        - linux/documentation/wsl_zsh-shell-config-4.md
+        - Life Systems:
+          - linux/documentation/life-systems/life-systems.md
+        - Templates:
+          - linux/documentation/templates/templates.md
+
+    - Infrastructure:
+        - Docker:
+            - linux/infrastructure/docker/configuration.md
+            - linux/infrastructure/docker/installation.md
+            - linux/infrastructure/docker/maintenance.md
+            - linux/infrastructure/docker/overview.md
+            - linux/infrastructure/docker/troubleshooting.md
+            - linux/infrastructure/docker/docker.md
+        - Kubernetes:
+            - linux/infrastructure/kubernetes/kubernetes.md
+        - Networking:
+            - linux/infrastructure/networking/networking.md
+        - tailscale:
+            - linux/infrastructure/tailscale/tailscale.md
+
+    - Software:
+        - linux/software/software.md
+        - Bash:
+            - linux/software/bash/bash.md
+        - Python:
+            - linux/software/bash/bash.md
+
+    - Testing:
+        - linux/testing/testing.md
+        - linux/testing/troubleshooting.md
+
+    - Archive:
+        - linux/archive/archive.md
+
   - AI: ai/overview.md
+
   - Engineering Lab:
     - Overview: engineering-lab/overview.md
     - Relationship Diagrams: engineering-lab/relationship-diagrams.md
     - UI Components: engineering-lab/ui-components.md
+
     - Experiments:
         - Mermaid: engineering-lab/experiments/mermaid/mermaid.md
         - CSS: engineering-lab/experiments/css/css.md
         - Icons: engineering-lab/experiments/icons/icons.md
         - JavaScript: engineering-lab/experiments/javascript/javascript.md
+
     - Engineering Design System:
       - engineering-lab/engineering-design-system/buttons.md
       - engineering-lab/engineering-design-system/challenge-cards.md
@@ -74,12 +109,14 @@ nav:
       - engineering-lab/engineering-design-system/standards-checklists.md
       - engineering-lab/engineering-design-system/tabs.md
       - engineering-lab/engineering-design-system/typography.md
+
     - Templates:
         - Network Architecture: engineering-lab/templates/network-architecture/network-architecture.md
         - Docker Architecture: engineering-lab/templates/docker-architecture/docker-architecture.md
         - VLAN Documentation: engineering-lab/templates/vlan-documentation/vlan-documentation.md
         - API Flow: engineering-lab/templates/api-flow/api-flow.md
         - Database Layout: engineering-lab/templates/database-layout/database-layout.md
+
   - test:
     - test.md: test/test.md
     - diagrams.md: test/diagrams.md
