@@ -2,8 +2,19 @@
 ---
 ## FRAMEWORK SECTIONS:
 Breakdown by part:
-```markdown
- Income -> Split (
+
+```mermaid
+journey
+    title Income Split
+    section $1000
+      Spend($500): 5: Me
+      Save($100): 1: Me
+      Invest($100): 1: Me, Cat
+      Taxes($300): 3: Me
+```
+```md
+graph LR
+Income --> Split (
      1. Spend
      2. Save
      3. Invest

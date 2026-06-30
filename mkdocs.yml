@@ -1,8 +1,28 @@
 site_name: Life Systems
 theme:
   name: material
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
 nav:
-  - test: test.md
+  - test:
+    - test.md: test/test.md
+    - diagrams.md: test/diagrams.md
+    - grids.md: test/grids.md
+    - lists.md: test/lists.md
+    - data.md: test/data.md
+    - math.md: test/math.md
   - Home: index.md
   - Money System:
     - Introduction: money-system/introduction.md
@@ -22,9 +42,30 @@ nav:
     - Starting a Business: business/starting.md
     - Running a Business: business/running.md
     - Growing a Business: business/growing.md
+
 plugins:
   - search
-  - mermaid2
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
-  - pymdownx.superfences
+  - attr_list
+  - admonition
+  - pymdownx.details
+
+  - pymdownx.superfences:
+      custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
