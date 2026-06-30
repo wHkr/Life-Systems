@@ -42,6 +42,43 @@ nav:
     - Starting a Business: business/starting.md
     - Running a Business: business/running.md
     - Growing a Business: business/growing.md
+  - Linux:
+    - Overview: linux/overview.md
+    - Installation: linux/installation.md
+    - Configuration: linux/configuration.md
+    - Maintenance: linux/maintenance.md
+    - Troubleshooting: linux/troubleshooting.md
+  - Docker:
+    - Overview: docker/overview.md
+    - Installation: docker/installation.md
+    - Configuration: docker/configuration.md
+    - Maintenance: docker/maintenance.md
+    - Troubleshooting: docker/troubleshooting.md
+  - AI: ai/overview.md
+  - Engineering Lab:
+    - Overview: engineering-lab/overview.md
+      Experiments:
+        - Mermaid:
+        - CSS:
+        - Icons:
+        - JavaScript:
+      Templates:
+        - Network Architecture:
+        - Docker Architecture:
+        - VLAN Documentation:
+        - API Flow:
+        - Database Layout:
+        - Security Review:
+    - Relationship Diagrams: engineering-lab/relationship-diagrams.md
+    - Flowcharts:
+    - Sequence Diagrams:
+    - ER Diagrams:
+    - Mind Maps:
+    - Material Components:
+    - CSS Experments:
+    - Icons
+    - Mermaid Playground:
+    - Templates:
 
 plugins:
   - search

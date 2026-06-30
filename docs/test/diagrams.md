@@ -4,6 +4,24 @@
 !!! tip
     > Syntax: [Custom Shapes](https://mermaid.ai/open-source/syntax/flowchart.html)
 
+## Networking Flowchart
+```mermaid
+flowchart LR
+
+Laptop["💻 Laptop"]
+Router["📡 Router"]
+Firewall["🛡️ Firewall"]
+Docker["🐳 Docker"]
+Database["🗄️ Database"]
+
+Laptop --> Router
+Router --> Firewall
+Firewall --> Docker
+Docker --> Database
+
+classDef secure fill:#009688,color:#fff,stroke:#004d40,stroke-width:3px
+class Firewall secure
+```
 
 ## Flowcharts
 ``` mermaid
@@ -255,9 +273,109 @@ flowchart LR
 
 
 ```mermaid
+---
+title: Ex. 3 - flowchart TD
+---
 flowchart TD
-    B["fa:fa-twitter for peace"]
+    B[":material-router-wireless:"]
     B-->C[fa:fa-ban forbidden]
     B-->D(fa:fa-spinner)
     B-->E(A fa:fa-camera-retro perhaps?)
 ```
+
+## Networking Flowchart -- Color
+```mermaid
+---
+title: Networking flowchart
+---
+flowchart LR
+
+    Internet([🌎 Internet])
+    Router{{Router}}
+    Firewall[[Firewall]]
+    Switch[(Core Switch)]
+    Server[(Docker Host)]
+    NAS[(Storage)]
+
+    Internet --> Router
+    Router --> Firewall
+    Firewall --> Switch
+    Switch --> Server
+    Switch --> NAS
+
+    style Internet fill:#8fd3ff,stroke:#006699,stroke-width:3px
+    style Router fill:#ffd166,stroke:#333
+    style Firewall fill:#ff595e,color:#fff
+    style Switch fill:#8ac926
+    style Server fill:#6a4c93,color:#fff
+    style NAS fill:#1982c4,color:#fff
+
+    linkStyle 0 stroke:#0099ff,stroke-width:3px
+    linkStyle 1 stroke:red,stroke-width:2px
+```
+
+## Animated Packet flow
+```mermaid
+flowchart LR
+
+A([Laptop]) -->|HTTPS| B((Router))
+B --> C{Firewall}
+C --> D[(Server)]
+
+linkStyle default stroke:#00b5bb,stroke-width:4px;
+```
+
+## Mind Map
+```mermaid
+mindmap
+root((Engineering))
+
+    Networking
+        Routing
+        VLANs
+        Firewalls
+
+    Programming
+        Python
+        C++
+        JavaScript
+
+    Linux
+        Bash
+        Docker
+        WSL
+
+    Documentation
+        MkDocs
+        Mermaid
+        Markdown
+```
+
+## Timeline
+```mermaid
+timeline
+    title Engineering Journey
+
+    2024 : Networking
+         : Linux
+
+    2025 : Python
+         : Docker
+
+    2026 : AI
+         : Documentation
+```
+
+## Git Graph
+```mermaid
+gitGraph
+commit
+branch feature
+checkout feature
+commit
+commit
+checkout main
+merge feature
+commit
+```
+
