@@ -51,11 +51,29 @@ nav:
   - AI: ai/overview.md
   - Engineering Lab:
     - Overview: engineering-lab/overview.md
+    - Relationship Diagrams: engineering-lab/relationship-diagrams.md
+    - UI Components: engineering-lab/ui-components.md
     - Experiments:
         - Mermaid: engineering-lab/experiments/mermaid/mermaid.md
         - CSS: engineering-lab/experiments/css/css.md
         - Icons: engineering-lab/experiments/icons/icons.md
         - JavaScript: engineering-lab/experiments/javascript/javascript.md
+    - Engineering Design System:
+      - engineering-lab/engineering-design-system/buttons.md
+      - engineering-lab/engineering-design-system/challenge-cards.md
+      - engineering-lab/engineering-design-system/color-palette.md
+      - engineering-lab/engineering-design-system/css-reference.md
+      - engineering-lab/engineering-design-system/diagram-cards.md
+      - engineering-lab/engineering-design-system/exercise-cards.md
+      - engineering-lab/engineering-design-system/hero-banner.md
+      - engineering-lab/engineering-design-system/icons.md
+      - engineering-lab/engineering-design-system/legend-cards.md
+      - engineering-lab/engineering-design-system/navigation-footer.md
+      - engineering-lab/engineering-design-system/objective-boxes.md
+      - engineering-lab/engineering-design-system/section-headers.md
+      - engineering-lab/engineering-design-system/standards-checklists.md
+      - engineering-lab/engineering-design-system/tabs.md
+      - engineering-lab/engineering-design-system/typography.md
     - Templates:
         - Network Architecture: engineering-lab/templates/network-architecture/network-architecture.md
         - Docker Architecture: engineering-lab/templates/docker-architecture/docker-architecture.md
@@ -69,7 +87,6 @@ nav:
     - lists.md: test/lists.md
     - data.md: test/data.md
     - math.md: test/math.md
-    - Relationship Diagrams: test/relationship-diagrams.md
     - Flowcharts: test/flowcharts.md
     - Sequence Diagrams: test/sequence-diagrams.md
     - ER Diagrams: test/er-diagrams.md
