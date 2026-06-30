@@ -296,7 +296,7 @@ python -m venv .venv
 source .venv/bin/activate
 
 ls
-
+```
 Permissions Size User  Date Modified Name
 drwxrwxrwx     - aaron 30 Jun 15:19   .git
 .rwxrwxrwx   474 aaron 20 Jun 20:32   .gitignore
@@ -325,6 +325,8 @@ That means:
 That explains all of the odd behavior.
 
 
+//============================================================
+
 ## My recommendation
 
 From now on, I'd separate your workflows like this:
@@ -350,6 +352,8 @@ From now on, I'd separate your workflows like this:
     - Development
 
 This becomes your primary development environment.
+
+//============================================================
 
 
 ### Why?
@@ -380,6 +384,8 @@ Terminal > Open `Ubuntu` App
 /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
 ```
 
+//============================================================
+
 
 ## What would I do -- Option A
 
@@ -398,8 +404,10 @@ cp -r /mnt/c/Users/aaron/Engineering/Projects/StaticWebpage_Life-Systems \ ~/Pro
 ```bash
 ```
 
-(We'll actually use rsync later because it's better, but this illustrates the idea)
+(We'll actually use `rsync` later because it's better, but this illustrates the idea)
 
+
+//============================================================
 
 ### Then
 
@@ -431,4 +439,46 @@ Scripts/
 lib/
 ```
 
-git 
+//============================================================
+
+## Then
+
+Install your dependencies
+```bash
+pip install -r requirements.txt
+```
+
+Then
+```bash
+python -m mkdocs serve
+```
+Everyone will be running natively in Linux
+
+//==============================================================
+
+## VS Code
+
+This is the part most people miss
+
+Instead of opening:
+`C:\Users\aaron\Engineering\Projects\...`
+
+You'll open:
+`~/Projects/Documentation/Life-Systems`
+
+
+//============================================================
+
+## Here's my proposal
+
+I'd like to make this your first "real" WSL project migration.
+
+We'll:
+
+1. Copy `Life-Systems` into `~/Projects/Documentation/`.
+2. Recreate the virtual environment as a Linux .venv.
+3. Reinstall the dependencies.
+4. Open the project in VS Code using the WSL extension.
+5. Verify that MkDocs, Mermaid, Git, and Starship all work from the Linux environment.
+
+Once that succeeds, we'll use the same workflow for every future project. It gives you one consistent development environment instead of having to think about whether a project belongs to Windows or Linux. I think that's the cleanest path forward for the engineering workstation you're building.
