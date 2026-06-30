@@ -1,0 +1,92 @@
+/* ==========================================
+   ENGINEERING LAB
+========================================== */
+
+.lab-hero {
+    background: linear-gradient(135deg,#1d1f23,#2c313a);
+    border-left: 8px solid #00b5bb;
+    border-radius: 14px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 35px rgba(0,0,0,.30);
+}
+
+.lab-hero h1{
+    margin:0;
+    font-size:2.5rem;
+    color:#ffffff;
+}
+
+.lab-hero p{
+    margin-top:.75rem;
+    color:#d6d6d6;
+    font-size:1.15rem;
+}
+
+.lab-subtitle{
+    color:#00b5bb;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    margin-bottom:.5rem;
+}
+
+.diagram-card{
+    background:#24282f;
+    border-radius:14px;
+    padding:2rem;
+    margin:2rem 0;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+
+.legend-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
+    margin:2rem 0;
+}
+
+.legend-card{
+    background:#2c313a;
+    border-left:6px solid #00b5bb;
+    border-radius:12px;
+    padding:1rem;
+}
+
+.legend-card h3{
+    margin-top:0;
+}
+
+.lab-section{
+    margin-top:4rem;
+    border-bottom:2px solid rgba(0,181,187,.20);
+    padding-bottom:.5rem;
+}
+
+.exercise{
+    border-left:6px solid #4caf50;
+}
+
+.challenge{
+    border-left:6px solid #ff9800;
+}
+
+.reference{
+    border-left:6px solid #2196f3;
+}
+
+.checklist{
+    list-style:none;
+    padding-left:0;
+}
+
+.checklist li{
+    padding:.35rem 0;
+}
+
+.checklist li::before{
+    content:"✔";
+    color:#00b5bb;
+    font-weight:bold;
+    margin-right:.75rem;
+}
