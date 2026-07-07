@@ -19,6 +19,17 @@ theme:
 nav:
   - Home: index.md
 
+  - Shane:
+    - index.md
+    - Pool:
+      - overview.md
+      - diagram.md
+      - startup.md
+      - maintenance.md
+      - troubleshooting.md
+      - parts.md
+      - manuals.md
+
   - Money System:
     - Introduction: money-system/introduction.md
     - Overview: money-system/overview.md
@@ -43,7 +54,7 @@ nav:
   - Linux:
     - Documentation:
         - linux/documentation/wsl_zsh-getting-started-1.md
-        - linux/documentation/wsl-zshrc_config-2.md
+        - linux/documentation/wsl_zsh-zshrc-config-2.md
         - linux/documentation/wsl_zsh-tools-config-3.md
         - linux/documentation/wsl_zsh-shell-config-4.md
         - Life Systems:
@@ -52,6 +63,7 @@ nav:
           - linux/documentation/templates/templates.md
 
     - Infrastructure:
+        - linux/infrastructure/env-descriptions.md
         - Docker:
             - linux/infrastructure/docker/configuration.md
             - linux/infrastructure/docker/installation.md
@@ -66,12 +78,13 @@ nav:
         - tailscale:
             - linux/infrastructure/tailscale/tailscale.md
 
+
     - Software:
         - linux/software/software.md
         - Bash:
             - linux/software/bash/bash.md
         - Python:
-            - linux/software/bash/bash.md
+            - linux/software/python/python.md
 
     - Testing:
         - linux/testing/testing.md
@@ -116,6 +129,7 @@ nav:
         - VLAN Documentation: engineering-lab/templates/vlan-documentation/vlan-documentation.md
         - API Flow: engineering-lab/templates/api-flow/api-flow.md
         - Database Layout: engineering-lab/templates/database-layout/database-layout.md
+        - Security Review: engineering-lab/templates/security-review/security-review.md
 
   - test:
     - test.md: test/test.md

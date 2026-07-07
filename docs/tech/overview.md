@@ -1,6 +1,6 @@
 # Network & Technology Overview
+
 ---
-# 🧜 Mermaid Laboratory
 
 > Welcome to the Mermaid showcase for **Life Systems**.
 >
@@ -30,18 +30,13 @@ classDef internet fill:#00b5bb,color:#fff,stroke:#005b66,stroke-width:3px
 classDef network fill:#3a86ff,color:#fff
 classDef server fill:#6a4c93,color:#fff
 classDef storage fill:#8ac926,color:#000
-
-class Internet internet
-class Router,Firewall,Core network
-class Docker server
-class Storage storage
 ```
 
 ---
 
 
 
-# Camera Network Topology
+## Camera Network Topology
 
 The following diagram illustrates the logical layout of the kennel camera network.
 
@@ -58,50 +53,47 @@ flowchart TD
     style B fill:#ccf,stroke:#333,stroke-width:2px
     style C fill:#afa,stroke:#333,stroke-width:1px
     style D fill:#eee,stroke:#333,stroke-width:1px
+
     style E fill:#ddd,stroke:#333,stroke-width:0.5px
     style F fill:#ddd,stroke:#333,stroke-width:0.5px
     style G fill:#eee,stroke:#333,stroke-width:1px
 ```
 
-# Camera Network
+## Camera Network
 
-## Purpose
-
-...
 
 ## Physical Topology
 
 ```mermaid
-...
+
 ```
 
 ## Logical Topology
 
 ```mermaid
-...
+
 ```
 
 ## Packet Flow
 
 ```mermaid
-...
+
 ```
 
 ## VLAN Layout
 
 ```mermaid
-...
+
 ```
 
 ## Failure Domains
 
 ```mermaid
-...
+
 ```
 
 ## Power Distribution
 
 ```mermaid
-...
-```
 
+```
