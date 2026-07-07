@@ -50,10 +50,6 @@ Check salt level"]
 SALT -- Yes --> GOOD([System Operating Normally])
 ```
 
-# ⚠️ Something Wrong?
-
-Don't panic! Start by finding the symptom that best matches what you're seeing.
-
 ---
 
 ## Quick Jump
