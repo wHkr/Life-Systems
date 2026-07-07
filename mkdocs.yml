@@ -20,14 +20,13 @@ nav:
   - Home: index.md
 
   - Shane:
-    - index.md
     - Pool:
-      - overview.md
-      - diagram.md
-      - startup.md
-      - maintenance.md
-      - troubleshooting.md
-      - parts.md
+      - shane/pool/overview.md
+      - shane/pool/diagram.md
+      - shane/pool/startup.md
+      - shane/pool/maintenance.md
+      - shane/pool/troubleshooting.md
+      - shane/pool/parts.md
       - manuals.md
 
   - Money System:
