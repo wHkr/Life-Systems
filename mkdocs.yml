@@ -27,7 +27,9 @@ nav:
       - shane/pool/maintenance.md
       - shane/pool/troubleshooting.md
       - shane/pool/parts.md
-      - manuals.md
+      - shane/pool/manuals.md
+      - shane/pool/history.md
+      - shane/pool/photos.md
 
   - Money System:
     - Introduction: money-system/introduction.md
