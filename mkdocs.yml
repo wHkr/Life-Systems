@@ -21,6 +21,35 @@ nav:
 
   - Aaron:
     - AI: 
+      - iPad OS AI:
+        - aaron/ai/ipad/overview.md
+        - aaron/ai/ipad/setup.md
+        - aaron/ai/ipad/local-access.md
+        - aaron/ai/ipad/remote-access.md
+        - aaron/ai/ipad/apps.md
+        - aaron/ai/ipad/business-assistant.md
+        - Setup:
+          - aaron/ai/ipad/setup/accounts.md
+          - aaron/ai/ipad/setup/backup.md
+          - aaron/ai/ipad/setup/security.md
+        - Hardware:
+          - aaron/ai/ipad/hardware/accessories.md
+          - aaron/ai/ipad/hardware/ipad-model.md
+          - aaron/ai/ipad/hardware/storage.md
+        - AI Connection:
+          - aaron/ai/ipad/ai-connection/authentication.md
+          - aaron/ai/ipad/ai-connection/local-network-access.md
+          - aaron/ai/ipad/ai-connection/tailscale-vpn.md
+          - aaron/ai/ipad/ai-connection/web-interface.md
+        - Business Assistant:
+          - aaron/ai/ipad/business-assistant/document-scanning.md
+          - aaron/ai/ipad/business-assistant/receipt-capture.md
+          - aaron/ai/ipad/business-assistant/reports.md
+          - aaron/ai/ipad/business-assistant/tax-organization.md
+        - Maintenance:
+          - aaron/ai/ipad/maintenance/troubleshooting.md
+          - aaron/ai/ipad/maintenance/updating-docker-services.md
+          - aaron/ai/ipad/maintenance/updating-models.md
       - aaron/ai/overview.md
       - aaron/ai/docker.md
       - aaron/ai/memory.md
