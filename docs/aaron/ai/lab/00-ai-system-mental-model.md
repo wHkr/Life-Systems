@@ -1,4 +1,4 @@
-# Remote AI Server Practice Lab
+# 00 -- AI System Mental Model
 
 > **Project Type:** Experimental AI Infrastructure Lab  
 >

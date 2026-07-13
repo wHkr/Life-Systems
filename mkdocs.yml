@@ -56,7 +56,7 @@ nav:
           - aaron/ai/ipad/maintenance/updating-docker-services.md
           - aaron/ai/ipad/maintenance/updating-models.md
       - Lab:
-        - aaron/ai/lab/remote-ai-server-practice.md
+        - aaron/ai/lab/00-ai-system-mental-model.md
         - aaron/ai/lab/01-environment-setup.md
         - aaron/ai/lab/02-ollama-installation.md
         - aaron/ai/lab/03-docker-foundations-and-networking.md
