@@ -2,7 +2,12 @@ site_name: Life Systems
 theme:
   name: material
   system: dark
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.sections
   icon:
+    logo: material/robot
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -21,7 +26,7 @@ nav:
 
   - Aaron:
     - AI: 
-      - iPad OS AI:
+      - iPad:
         - aaron/ai/ipad/overview.md
         - aaron/ai/ipad/setup.md
         - aaron/ai/ipad/local-access.md
@@ -50,6 +55,17 @@ nav:
           - aaron/ai/ipad/maintenance/troubleshooting.md
           - aaron/ai/ipad/maintenance/updating-docker-services.md
           - aaron/ai/ipad/maintenance/updating-models.md
+      - Lab:
+        - aaron/ai/lab/remote-ai-server-practice.md
+        - aaron/ai/lab/01-environment-setup.md
+        - aaron/ai/lab/02-ollama-api.md
+        - aaron/ai/lab/03-docker-networking.md
+        - aaron/ai/lab/04-odysseus-deployment.md
+        - aaron/ai/lab/05-tailscale-remote-access.md
+        - aaron/ai/lab/06-memory-system.md
+        - aaron/ai/lab/07-receipt-workflow.md
+        - aaron/ai/lab/troubleshooting.md
+        - aaron/ai/lab/lessons-learned.md
       - aaron/ai/overview.md
       - aaron/ai/docker.md
       - aaron/ai/memory.md
@@ -172,6 +188,13 @@ nav:
       - Running a Business: jared/business/running.md
       - Growing a Business: jared/business/growing.md
 
+  - Troubleshooting:
+    - Docker: troubleshooting/docker.md
+    - Github Pages: troubleshooting/github-pages.md
+    - MkDocs: troubleshooting/mkdocs.md
+    - Ollama: troubleshooting/ollama.md
+    - Tailscale: troubleshooting/tailscale.md
+
 plugins:
   - search
 
@@ -184,21 +207,19 @@ extra_css:
 
 markdown_extensions:
   - attr_list
+  - md_in_html
   - admonition
   - pymdownx.details
-
   - pymdownx.superfences:
       custom_fences:
       - name: mermaid
         class: mermaid
         format: !!python/name:pymdownx.superfences.fence_code_format
-
   - pymdownx.tabbed:
       alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
-
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
