@@ -58,12 +58,13 @@ nav:
       - Lab:
         - aaron/ai/lab/remote-ai-server-practice.md
         - aaron/ai/lab/01-environment-setup.md
-        - aaron/ai/lab/02-ollama-api.md
-        - aaron/ai/lab/03-docker-networking.md
+        - aaron/ai/lab/02-ollama-installation.md
+        - aaron/ai/lab/03-docker-foundations-and-networking.md
         - aaron/ai/lab/04-odysseus-deployment.md
         - aaron/ai/lab/05-tailscale-remote-access.md
         - aaron/ai/lab/06-memory-system.md
-        - aaron/ai/lab/07-receipt-workflow.md
+        - aaron/ai/lab/07-document-processing.md
+        - aaron/ai/lab/08-receipt-workflow.md
         - aaron/ai/lab/troubleshooting.md
         - aaron/ai/lab/lessons-learned.md
       - aaron/ai/overview.md

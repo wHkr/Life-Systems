@@ -196,7 +196,7 @@ python3 --version
 
 pip --version
 
-docker --version
+docker --version # Docker Desktop must be started via app or PowerShell
 ```
 
 ---
@@ -237,14 +237,47 @@ C:\Engineering\Projects
 Inside:
 ```markdown
 AI-Server-Lab
-docker-compose.yml
-.env
-data/
-logs/
-documents/
+│
+├── docker-compose.yml
+├── .env
+├── README.md
+│
+├── data
+│   ├── chromadb
+│   ├── odysseus
+│   └── documents
+│
+├── backups
+│
+├── logs
+│
+└── scripts
 ```
 
-Treat this like its own engineering project
+Why this layout?
+
+   -  `docker-compose.yml` — defines all your containers.
+   -  `.env` — stores configuration (ports, passwords, URLs).
+   -  `README.md` — quick notes about the project.
+   -  `data/` — persistent data that survives container restarts.
+   -  `backups/` — exported databases and important files.
+   -  `logs/` — log files if you choose to save them.
+   -  `scripts/` — helper scripts for backups, updates, or maintenance.
+
+**Recommended**
+Keep this project on the Windows file system
+It's the same pattern as MkDocs.
+
+   -  Project files: Windows filesystem
+   -  Development tools: WSL
+   -  Docker Engine: Windows (via Docker Desktop)
+
+That gives you:
+
+   - Easy access from Windows apps.
+    - Easy editing in VS Code.
+    - Docker can mount the folders without issue.
+    - WSL can still work in the project directory through /mnt/c/....
 
 ---
 
