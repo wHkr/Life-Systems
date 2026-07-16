@@ -37,13 +37,6 @@
 :material-dog-side:
 */
 
-/* Make navigation section titles stand out */
-.md-nav__item--section > .md-nav__link {
-    font-weight: 800;
-    font-size: 1.05rem;
-    color: var(--md-primary-fg-color);
-}
-
 /* Make nested page links slightly lighter */
 .md-nav__link {
     font-weight: 400;
@@ -52,4 +45,12 @@
 /* Add spacing above sections */
 .md-nav__item--section {
     margin-top: 0.8rem;
+}
+
+.md-nav__item--section > .md-nav__link {
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0,181,187,0.3);
+    padding-bottom: 0.3rem;
 }
