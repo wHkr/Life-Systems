@@ -1,5 +1,6 @@
 # Making Adjustments
 
+## WSL Terminal
 Use a `WSL` prompt and go to your linux file system
 ```powershell
 wsl
@@ -13,8 +14,8 @@ source ~/venvs/StaticWebpage_Life-Systems/bin/activate
 
 Ensure your python and mkdocs are being used from the linux environment
 ```bash
-which python
-which mkdocs
+which python # /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python
+which mkdocs # /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs
 ```
 
 Using same python virtual environment, `wsl` prompt, navigate to your windows file system and open the folder
@@ -23,8 +24,17 @@ cd /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
 code .
 ```
 
-Start the server from a terminal within VS Code
+## VS Code Terminal -- Will open as `WSL` terminal automatically
+verify location and software, then start server
 ```bash
+pwd # /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
+
+which python # /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python
+python --version # Python 3.12.3
+
+which mkdocs # /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs
+mkdocs --version # mkdocs, version 1.6.1 from /home/aaron/venvs/StaticWebpage_Life-Systems/lib/python3.12/site-packages/mkdocs (Python 3.12)
+
 mkdocs serve
 ```
 
