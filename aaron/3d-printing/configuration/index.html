@@ -23,7 +23,7 @@
     
     
       
-        <title>Configuration - Life Systems</title>
+        <title>3D Printer Calibration Workflow - Life Systems</title>
       
     
     
@@ -132,6 +132,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#3d-printer-calibration-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -162,7 +167,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuration
+              3D Printer Calibration Workflow
             
           </span>
         </div>
@@ -696,6 +701,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3D Printer Calibration Workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -704,7 +729,7 @@
   <span class="md-ellipsis">
     
   
-    Configuration
+    3D Printer Calibration Workflow
   
 
     
@@ -713,6 +738,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6519,6 +6574,27 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6535,9 +6611,304 @@
 
 
 
-  <h1>Configuration</h1>
+<h1 id="3d-printer-calibration-workflow">3D Printer Calibration Workflow</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This document defines the recommended order for configuring and calibrating a 3D printer.</p>
+<p>Calibration should be performed in sequence because each adjustment affects the next.<br />
+Do not tune advanced settings until mechanical alignment, extrusion, and first-layer performance are correct.</p>
+<hr />
+<h1 id="calibration-order-overview">Calibration Order Overview</h1>
+<ol>
+<li>Mechanical Inspection</li>
+<li>Bed Leveling / Z-Axis Calibration</li>
+<li>Extruder Calibration</li>
+<li>First Layer Calibration</li>
+<li>Temperature Calibration</li>
+<li>Retraction Calibration</li>
+<li>Flow Calibration</li>
+<li>Pressure Advance / Linear Advance</li>
+<li>Speed Optimization</li>
+<li>Dimensional Accuracy</li>
+<li>Final Profile Backup</li>
+</ol>
+<hr />
+<h1 id="1-mechanical-inspection">1. Mechanical Inspection</h1>
+<p>Before changing software settings, verify printer hardware.</p>
+<h2 id="check">Check:</h2>
+<ul>
+<li>[ ] Frame is square</li>
+<li>[ ] Gantry is level</li>
+<li>[ ] Belts are tensioned</li>
+<li>[ ] V-wheels/linear rails move smoothly</li>
+<li>[ ] Lead screws are clean and aligned</li>
+<li>[ ] No excessive play in axes</li>
+<li>[ ] No loose hotend components</li>
+<li>[ ] No nozzle damage</li>
+</ul>
+<hr />
+<h1 id="2-z-axis-bed-calibration">2. Z-Axis / Bed Calibration</h1>
+<h2 id="goal">Goal</h2>
+<p>Establish the correct nozzle-to-bed distance.</p>
+<p>Incorrect Z-offset causes:</p>
+<h3 id="too-high">Too High</h3>
+<p>Symptoms:</p>
+<ul>
+<li>Lines do not stick</li>
+<li>Gaps between extrusion lines</li>
+<li>Corners lift</li>
+<li>First layer looks rounded</li>
+</ul>
+<p>Adjustment:</p>
+<div class="highlight"><pre><span></span><code>Decrease Z-offset
+(move nozzle closer to bed)
+</code></pre></div>
+<hr />
+<h3 id="too-low">Too Low</h3>
+<p>Symptoms:</p>
+<ul>
+<li>Plastic is squished excessively</li>
+<li>Rough first layer</li>
+<li>Extrusion becomes inconsistent</li>
+<li>Nozzle drags through print</li>
+</ul>
+<p>Adjustment:</p>
+<div class="highlight"><pre><span></span><code>Increase Z-offset
+(move nozzle away from bed)
+</code></pre></div>
+<hr />
+<h2 id="tune">Tune:</h2>
+<ul>
+<li>Bed leveling</li>
+<li>Mesh calibration</li>
+<li>Z-offset</li>
+<li>First-layer height</li>
+</ul>
+<p>Recommended starting point:</p>
+<div class="highlight"><pre><span></span><code>First Layer Height:
+0.20 mm
 
+Z Offset:
+Calibrate manually
 
+Bed Mesh:
+Enable after leveling
+</code></pre></div>
+<hr />
+<h1 id="3-extruder-calibration">3. Extruder Calibration</h1>
+<h2 id="goal_1">Goal</h2>
+<p>Ensure commanded extrusion matches actual extrusion.</p>
+<p>Incorrect extrusion affects:</p>
+<ul>
+<li>Walls</li>
+<li>Infill</li>
+<li>First layer</li>
+<li>Strength</li>
+<li>Dimensional accuracy</li>
+</ul>
+<hr />
+<h2 id="calibrate">Calibrate:</h2>
+<h3 id="e-steps-rotation-distance">E-Steps / Rotation Distance</h3>
+<p>Test:</p>
+<p>Command:</p>
+<div class="highlight"><pre><span></span><code>Extrude 100mm filament
+</code></pre></div>
+<p>Measure actual extrusion.</p>
+<p>Adjust:</p>
+<div class="highlight"><pre><span></span><code>New Value =
+(Current Value × Commanded Length)
+÷ Actual Length
+</code></pre></div>
+<hr />
+<h1 id="4-first-layer-calibration">4. First Layer Calibration</h1>
+<h2 id="goal_2">Goal</h2>
+<p>Achieve consistent adhesion.</p>
+<p>Tune:</p>
+<ul>
+<li>Z-offset</li>
+<li>First layer speed</li>
+<li>First layer extrusion width</li>
+<li>Bed temperature</li>
+</ul>
+<p>Recommended starting values:</p>
+<div class="highlight"><pre><span></span><code>First Layer Speed:
+20-30 mm/s
+
+First Layer Width:
+120-140%
+
+First Layer Height:
+0.20 mm
+</code></pre></div>
+<hr />
+<h1 id="5-temperature-calibration">5. Temperature Calibration</h1>
+<h2 id="goal_3">Goal</h2>
+<p>Find the best printing temperature.</p>
+<p>Perform:</p>
+<div class="highlight"><pre><span></span><code>Temperature Tower
+</code></pre></div>
+<p>Tune:</p>
+<ul>
+<li>Nozzle temperature</li>
+<li>Bed temperature</li>
+<li>Cooling settings</li>
+</ul>
+<p>Evaluate:</p>
+<ul>
+<li>Layer adhesion</li>
+<li>Stringing</li>
+<li>Surface quality</li>
+<li>Overhang performance</li>
+</ul>
+<hr />
+<h1 id="6-retraction-calibration">6. Retraction Calibration</h1>
+<h2 id="goal_4">Goal</h2>
+<p>Reduce stringing during travel moves.</p>
+<p>Tune:</p>
+<ul>
+<li>Retraction distance</li>
+<li>Retraction speed</li>
+<li>Travel speed</li>
+</ul>
+<p>Too little:</p>
+<div class="highlight"><pre><span></span><code>Stringing
+Blobs
+Oozing
+</code></pre></div>
+<p>Too much:</p>
+<div class="highlight"><pre><span></span><code>Under-extrusion
+Heat creep
+Grinding filament
+</code></pre></div>
+<hr />
+<h1 id="7-flow-calibration">7. Flow Calibration</h1>
+<h2 id="goal_5">Goal</h2>
+<p>Match extrusion volume to slicer calculations.</p>
+<p>Tune:</p>
+<div class="highlight"><pre><span></span><code>Flow Rate / Extrusion Multiplier
+</code></pre></div>
+<p>Symptoms of incorrect flow:</p>
+<h2 id="too-high_1">Too High</h2>
+<ul>
+<li>Bulging walls</li>
+<li>Poor dimensions</li>
+<li>Excess material</li>
+</ul>
+<h2 id="too-low_1">Too Low</h2>
+<ul>
+<li>Weak walls</li>
+<li>Gaps</li>
+<li>Poor top surfaces</li>
+</ul>
+<hr />
+<h1 id="8-pressure-advance-linear-advance">8. Pressure Advance / Linear Advance</h1>
+<h2 id="goal_6">Goal</h2>
+<p>Compensate for filament pressure changes during acceleration.</p>
+<p>Controls:</p>
+<ul>
+<li>Corner quality</li>
+<li>Sharp edges</li>
+<li>Consistent extrusion</li>
+</ul>
+<p>Tune only after:</p>
+<ul>
+<li>Z-offset is correct</li>
+<li>Extruder calibration is complete</li>
+<li>Flow is calibrated</li>
+</ul>
+<hr />
+<h2 id="too-low_2">Too Low</h2>
+<p>Symptoms:</p>
+<ul>
+<li>Rounded corners</li>
+<li>Extra material at corners</li>
+<li>Blobs</li>
+</ul>
+<hr />
+<h2 id="too-high_2">Too High</h2>
+<p>Symptoms:</p>
+<ul>
+<li>Thin corners</li>
+<li>Under-extrusion after acceleration</li>
+<li>Gaps</li>
+</ul>
+<hr />
+<h1 id="9-speed-optimization">9. Speed Optimization</h1>
+<p>Tune after quality settings are correct.</p>
+<p>Adjust:</p>
+<ul>
+<li>Print speed</li>
+<li>Acceleration</li>
+<li>Jerk</li>
+<li>Travel speed</li>
+</ul>
+<p>Higher speed requires:</p>
+<ul>
+<li>More extrusion capability</li>
+<li>Better cooling</li>
+<li>More precise pressure advance</li>
+</ul>
+<hr />
+<h1 id="10-dimensional-accuracy">10. Dimensional Accuracy</h1>
+<p>After extrusion is calibrated:</p>
+<p>Print:</p>
+<div class="highlight"><pre><span></span><code>20mm Calibration Cube
+</code></pre></div>
+<p>Measure:</p>
+<ul>
+<li>X dimension</li>
+<li>Y dimension</li>
+<li>Z dimension</li>
+</ul>
+<p>Adjust:</p>
+<ul>
+<li>Steps/mm</li>
+<li>Shrink compensation</li>
+<li>Flow</li>
+</ul>
+<hr />
+<h1 id="11-final-profile-backup">11. Final Profile Backup</h1>
+<p>After calibration:</p>
+<p>Backup:</p>
+<div class="highlight"><pre><span></span><code>Printer Profile
+Slicer Profile
+Firmware Settings
+Material Profiles
+</code></pre></div>
+<p>Record:</p>
+<div class="highlight"><pre><span></span><code>Printer:
+Nozzle:
+Material:
+Layer Height:
+Temperature:
+Flow:
+Pressure Advance:
+Retraction:
+Speed:
+Acceleration:
+</code></pre></div>
+<hr />
+<h1 id="calibration-priority">Calibration Priority</h1>
+<h2 id="highest-impact">Highest Impact</h2>
+<ol>
+<li>Z-offset</li>
+<li>Bed leveling</li>
+<li>Extruder calibration</li>
+<li>Temperature</li>
+<li>Flow</li>
+</ol>
+<h2 id="advanced-tuning">Advanced Tuning</h2>
+<ol>
+<li>Retraction</li>
+<li>Pressure Advance</li>
+<li>Speed</li>
+<li>Dimensional compensation</li>
+</ol>
+<hr />
+<h1 id="golden-rule">Golden Rule</h1>
+<p>Only change one variable at a time.</p>
+<p>Make a test print.</p>
+<p>Record the result.</p>
+<p>Keep successful profiles.</p>
 
 
 
