@@ -26,6 +26,10 @@ nav:
   - Home: index.md
 
   - Aaron:
+    - 3D Printing:
+      - aaron/3d-printing/processes.md
+      - aaron/3d-printing/filaments.md
+      - aaron/3d-printing/configuration.md
     - AI: 
       - iPad:
         - aaron/ai/ipad/overview.md
