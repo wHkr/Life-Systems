@@ -1,13 +1,14 @@
-# MkDocs -- Starting/Stopping/Adjusting
+# MkDocs Development Workflow
 
-This document explains how to modify, test, and deploy the **Life Systems MkDocs website** using:
+This document explains the complete development workflow for the **Life Systems MkDocs website**, including:
 
-- **WSL Ubuntu** for the Linux development environment
-- **Python virtual environment** stored in the Linux filesystem
-- **VS Code Remote WSL** for editing
-- **GitHub Pages** for deployment
+- Starting the WSL development environment
+- Activating the Python/MkDocs toolchain
+- Editing with VS Code Remote WSL
+- Testing changes locally
+- Publishing updates through GitHub Pages
 
-> **Important:** The project files are stored on the Windows filesystem, but Python and MkDocs run from the WSL Linux environment.
+> **Important:** The project files are stored on the Windows filesystem, but Python, MkDocs, and the virtual environment run from the WSL Linux environment.
 
 ---
 
@@ -26,13 +27,13 @@ cd ~
 
 # 2. Activate Python Virtual Environment
 
-The Python environment is stored in the Linux filesystem:
+The Python environment is stored in the WSL Linux filesystem:
 
 ```bash
 source ~/venvs/StaticWebpage_Life-Systems/bin/activate
 ```
 
-Verify that Python and MkDocs are using the Linux virtual environment:
+Verify Python is using the Linux virtual environment:
 
 ```bash
 which python
@@ -40,6 +41,8 @@ which python
 # Expected:
 # /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python
 ```
+
+Verify MkDocs is using the Linux virtual environment:
 
 ```bash
 which mkdocs
@@ -52,7 +55,9 @@ which mkdocs
 
 # 3. Open Project in VS Code
 
-Navigate to the project stored on the Windows filesystem:
+The website source files are stored on the Windows filesystem.
+
+Navigate to the project:
 
 ```bash
 cd /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
@@ -64,7 +69,13 @@ Open VS Code:
 code .
 ```
 
-VS Code should automatically open using the **WSL Remote environment**.
+VS Code should automatically open using the **Remote WSL environment**.
+
+Verify the bottom-left corner of VS Code shows:
+
+```text
+WSL: Ubuntu
+```
 
 ---
 
@@ -83,10 +94,9 @@ pwd
 # /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
 ```
 
-
 ---
 
-## Verify Python
+## Verify Python Interpreter
 
 ```bash
 which python
@@ -95,7 +105,7 @@ which python
 # /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python
 ```
 
-Check version:
+Check Python version:
 
 ```bash
 python --version
@@ -106,7 +116,7 @@ python --version
 
 ---
 
-## Verify MkDocs
+## Verify MkDocs Installation
 
 ```bash
 which mkdocs
@@ -115,7 +125,7 @@ which mkdocs
 # /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs
 ```
 
-Check version:
+Check MkDocs version:
 
 ```bash
 mkdocs --version
@@ -126,7 +136,9 @@ mkdocs --version
 
 ---
 
-# 5. Run Local Development Server
+# 5. Local Development Server
+
+Before publishing changes, test the website locally.
 
 Start the MkDocs development server:
 
@@ -134,105 +146,156 @@ Start the MkDocs development server:
 mkdocs serve
 ```
 
-The website will be available locally at:
+The website will be available at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-Changes made to Markdown files will automatically refresh.
+Changes made to Markdown files will automatically refresh the website.
+
+Stop the server with:
+
+```text
+CTRL + C
+```
 
 ---
 
 # 6. Updating Website Files
 
-After making changes:
+After making and testing changes:
 
-## Stage changes
+## Stage Changes
 
 ```bash
 git add .
 ```
 
-## Commit changes
+---
+
+## Commit Changes
 
 ```bash
 git commit -m "Describe changes made"
 ```
 
-## Push source files to GitHub
+Example:
 
 ```bash
-git push # Updates your code and markdown files on GitHub `main`
+git commit -m "Updated pool maintenance documentation"
 ```
 
-## Deploy website and start server
+---
+
+## Push Source Files to GitHub
 
 ```bash
-mkdocs gh-deploy # Updates your website
-
-mkdocs serve
+git push
 ```
+
+This updates the source repository:
+
+```
+main branch
+
+├── docs/
+├── mkdocs.yml
+└── source files
+```
+
+---
+
+## Deploy Website
+
+Run:
+
+```bash
+mkdocs gh-deploy
+```
+
+This updates the public website.
 
 !!! abstract "`mkdocs gh-deploy` performs three actions"
 
     **1. Builds the website**
 
-       Converts Markdown source files into a complete static website:
+    Converts Markdown source files into a complete static website:
 
-       ```
-       Markdown → HTML/CSS/JavaScript
-       ```
+    ```
+    Markdown → HTML/CSS/JavaScript
+    ```
 
     **2. Creates or updates the `gh-pages` branch**
 
-       Pushes the generated website files to the branch used by GitHub Pages.
+    Pushes the generated website files to the branch used by GitHub Pages:
 
-       ```
-       main branch
-       ├── docs/
-       ├── mkdocs.yml
-       └── source files
+    ```
+    main branch
 
-       gh-pages branch
-       ├── index.html
-       ├── assets/
-       └── generated website
-       ```
+    ├── docs/
+    ├── mkdocs.yml
+    └── source files
+
+
+    gh-pages branch
+
+    ├── index.html
+    ├── assets/
+    └── generated website
+    ```
 
     **3. Deploys the website through GitHub Pages**
 
-       GitHub Pages detects the updated `gh-pages` branch and serves the generated website at your public URL.
+    GitHub Pages detects the updated `gh-pages` branch and serves the generated website at the public URL.
 
 ---
 
-# 7. Exit Workflow
+# 7. Exit Development Environment
 
-## Kill MkDocs Server
+## Stop MkDocs Server
 
-From whichever terminal the `mkdocs serve` command was run from.
-```bash
-ctrl + c
+If the development server is running:
+
+```text
+CTRL + C
 ```
 
-## Close remote connection & VS Code
+---
 
-`File > Close remote connection`<br>
-`File > Close Folder`<br>
-`File > Close Window`<br>
+## Close VS Code Remote Session
 
-## Kill Python Virtual Environment
+Use:
 
-Using same wsl terminal that you started VS Code from:
+```
+File > Close Remote Connection
+```
+
+Then:
+
+```
+File > Close Window
+```
+
+---
+
+## Deactivate Python Environment
+
+Using the WSL terminal where the environment was activated:
+
 ```bash
 deactivate
 ```
 
-# 8. Common Workflow
+---
 
-Normal editing cycle:
+# 8. Normal Development Workflow
+
+## Start Development
 
 ```bash
+wsl
+
 source ~/venvs/StaticWebpage_Life-Systems/bin/activate
 
 cd /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
@@ -242,11 +305,17 @@ code .
 mkdocs serve
 ```
 
-After completing changes:
+---
+
+## Publish Updates
+
+After testing changes:
 
 ```bash
 git add .
+
 git commit -m "Update documentation"
+
 git push
 
 mkdocs gh-deploy
@@ -256,21 +325,21 @@ mkdocs gh-deploy
 
 # Troubleshooting
 
-## MkDocs command not found
+## MkDocs Command Not Found
 
-Check the virtual environment:
+Check the active MkDocs location:
 
 ```bash
 which mkdocs
 ```
 
-If it does not point to:
+Expected:
 
 ```text
 /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs
 ```
 
-reactivate the environment:
+If incorrect, reactivate the environment:
 
 ```bash
 source ~/venvs/StaticWebpage_Life-Systems/bin/activate
@@ -278,18 +347,30 @@ source ~/venvs/StaticWebpage_Life-Systems/bin/activate
 
 ---
 
-## VS Code using Windows Python
+## VS Code Using Windows Python
 
-Confirm VS Code is connected to WSL.
+Confirm VS Code is connected to WSL:
 
-The bottom-left corner should show:
-
-```text
+```
 WSL: Ubuntu
 ```
 
-The Python interpreter should be:
+The selected Python interpreter should be:
 
 ```text
 /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python
 ```
+
+Do not use:
+
+```text
+C:\Python...
+```
+
+or:
+
+```text
+/usr/bin/python
+```
+
+The correct interpreter is the Python installation inside the WSL virtual environment.
