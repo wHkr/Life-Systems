@@ -557,6 +557,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making Adjustments
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -573,6 +591,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#making-changes-to-files-and-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making changes to files and folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6529,6 +6577,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#making-changes-to-files-and-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making changes to files and folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6545,6 +6612,32 @@
 
 
 <h1 id="making-adjustments">Making Adjustments</h1>
+<p>Use a <code>WSL</code> prompt and go to your linux file system
+<div class="highlight"><pre><span></span><code><span class="n">wsl</span>
+<span class="nb">cd </span><span class="p">~</span>
+</code></pre></div></p>
+<p>Activate your python environment from your linux file system
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/venvs/StaticWebpage_Life-Systems/bin/activate
+</code></pre></div></p>
+<p>Ensure your python and mkdocs are being used from the linux environment
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python
+which<span class="w"> </span>mkdocs
+</code></pre></div></p>
+<p>Using same python virtual environment, <code>wsl</code> prompt, navigate to your windows file system and open the folder
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
+code<span class="w"> </span>.
+</code></pre></div></p>
+<p>Start the server from a terminal within VS Code
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>serve
+</code></pre></div></p>
+<h2 id="making-changes-to-files-and-folders">Making changes to files and folders</h2>
+<p>Upon making any changes, push changes to GitHub then re-deploy them
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;...&quot;</span>
+git<span class="w"> </span>push
+mkdocs<span class="w"> </span>gh-deploy
+mkdocs<span class="w"> </span>serve
+</code></pre></div></p>
 
 
 
