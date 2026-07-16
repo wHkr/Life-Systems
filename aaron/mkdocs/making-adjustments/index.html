@@ -608,6 +608,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#wsl-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WSL Terminal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-code-terminal-will-open-as-wsl-terminal-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VS Code Terminal -- Will open as WSL terminal automatically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#making-changes-to-files-and-folders" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6584,6 +6606,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#wsl-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WSL Terminal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-code-terminal-will-open-as-wsl-terminal-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VS Code Terminal -- Will open as WSL terminal automatically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#making-changes-to-files-and-folders" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6612,6 +6656,7 @@
 
 
 <h1 id="making-adjustments">Making Adjustments</h1>
+<h2 id="wsl-terminal">WSL Terminal</h2>
 <p>Use a <code>WSL</code> prompt and go to your linux file system
 <div class="highlight"><pre><span></span><code><span class="n">wsl</span>
 <span class="nb">cd </span><span class="p">~</span>
@@ -6620,15 +6665,24 @@
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/venvs/StaticWebpage_Life-Systems/bin/activate
 </code></pre></div></p>
 <p>Ensure your python and mkdocs are being used from the linux environment
-<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python
-which<span class="w"> </span>mkdocs
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python</span>
+which<span class="w"> </span>mkdocs<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs</span>
 </code></pre></div></p>
 <p>Using same python virtual environment, <code>wsl</code> prompt, navigate to your windows file system and open the folder
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
 code<span class="w"> </span>.
 </code></pre></div></p>
-<p>Start the server from a terminal within VS Code
-<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>serve
+<h2 id="vs-code-terminal-will-open-as-wsl-terminal-automatically">VS Code Terminal -- Will open as <code>WSL</code> terminal automatically</h2>
+<p>verify location and software, then start server
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span><span class="w"> </span><span class="c1"># /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems</span>
+
+which<span class="w"> </span>python<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python</span>
+python<span class="w"> </span>--version<span class="w"> </span><span class="c1"># Python 3.12.3</span>
+
+which<span class="w"> </span>mkdocs<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs</span>
+mkdocs<span class="w"> </span>--version<span class="w"> </span><span class="c1"># mkdocs, version 1.6.1 from /home/aaron/venvs/StaticWebpage_Life-Systems/lib/python3.12/site-packages/mkdocs (Python 3.12)</span>
+
+mkdocs<span class="w"> </span>serve
 </code></pre></div></p>
 <h2 id="making-changes-to-files-and-folders">Making changes to files and folders</h2>
 <p>Upon making any changes, push changes to GitHub then re-deploy them
