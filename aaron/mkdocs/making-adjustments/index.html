@@ -23,7 +23,7 @@
     
     
       
-        <title>Making Adjustments - Life Systems</title>
+        <title>MkDocs -- Starting/Stopping/Adjusting - Life Systems</title>
       
     
     
@@ -133,7 +133,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#making-adjustments" class="md-skip">
+        <a href="#mkdocs-startingstoppingadjusting" class="md-skip">
           Skip to content
         </a>
       
@@ -167,7 +167,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Making Adjustments
+              MkDocs -- Starting/Stopping/Adjusting
             
           </span>
         </div>
@@ -557,24 +557,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Making Adjustments
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -582,7 +564,7 @@
   <span class="md-ellipsis">
     
   
-    Making Adjustments
+    MkDocs -- Starting/Stopping/Adjusting
   
 
     
@@ -591,58 +573,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wsl-terminal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WSL Terminal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vs-code-terminal-will-open-as-wsl-terminal-automatically" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        VS Code Terminal -- Will open as WSL terminal automatically
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#making-changes-to-files-and-folders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Making changes to files and folders
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -6599,47 +6529,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wsl-terminal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WSL Terminal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vs-code-terminal-will-open-as-wsl-terminal-automatically" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        VS Code Terminal -- Will open as WSL terminal automatically
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#making-changes-to-files-and-folders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Making changes to files and folders
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -6655,43 +6544,184 @@
 
 
 
-<h1 id="making-adjustments">Making Adjustments</h1>
-<h2 id="wsl-terminal">WSL Terminal</h2>
-<p>Use a <code>WSL</code> prompt and go to your linux file system
-<div class="highlight"><pre><span></span><code><span class="n">wsl</span>
-<span class="nb">cd </span><span class="p">~</span>
-</code></pre></div></p>
-<p>Activate your python environment from your linux file system
+<h1 id="mkdocs-startingstoppingadjusting">MkDocs -- Starting/Stopping/Adjusting</h1>
+<p>This document explains how to modify, test, and deploy the <strong>Life Systems MkDocs website</strong> using:</p>
+<ul>
+<li><strong>WSL Ubuntu</strong> for the Linux development environment</li>
+<li><strong>Python virtual environment</strong> stored in the Linux filesystem</li>
+<li><strong>VS Code Remote WSL</strong> for editing</li>
+<li><strong>GitHub Pages</strong> for deployment</li>
+</ul>
+<blockquote>
+<p><strong>Important:</strong> The project files are stored on the Windows filesystem, but Python and MkDocs run from the WSL Linux environment.</p>
+</blockquote>
+<hr />
+<h1 id="1-open-wsl-environment">1. Open WSL Environment</h1>
+<p>Open a <strong>WSL terminal</strong>.</p>
+<p>Navigate to your Linux home directory:</p>
+<div class="highlight"><pre><span></span><code>wsl
+<span class="nb">cd</span><span class="w"> </span>~
+</code></pre></div>
+<hr />
+<h1 id="2-activate-python-virtual-environment">2. Activate Python Virtual Environment</h1>
+<p>The Python environment is stored in the Linux filesystem:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/venvs/StaticWebpage_Life-Systems/bin/activate
-</code></pre></div></p>
-<p>Ensure your python and mkdocs are being used from the linux environment
-<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python</span>
-which<span class="w"> </span>mkdocs<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs</span>
-</code></pre></div></p>
-<p>Using same python virtual environment, <code>wsl</code> prompt, navigate to your windows file system and open the folder
+</code></pre></div>
+<p>Verify that Python and MkDocs are using the Linux virtual environment:</p>
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python
+
+<span class="c1"># Expected:</span>
+<span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>mkdocs
+
+<span class="c1"># Expected:</span>
+<span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs</span>
+</code></pre></div>
+<hr />
+<h1 id="3-open-project-in-vs-code">3. Open Project in VS Code</h1>
+<p>Navigate to the project stored on the Windows filesystem:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
-code<span class="w"> </span>.
-</code></pre></div></p>
-<h2 id="vs-code-terminal-will-open-as-wsl-terminal-automatically">VS Code Terminal -- Will open as <code>WSL</code> terminal automatically</h2>
-<p>verify location and software, then start server
-<div class="highlight"><pre><span></span><code><span class="nb">pwd</span><span class="w"> </span><span class="c1"># /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems</span>
+</code></pre></div>
+<p>Open VS Code:</p>
+<div class="highlight"><pre><span></span><code>code<span class="w"> </span>.
+</code></pre></div>
+<p>VS Code should automatically open using the <strong>WSL Remote environment</strong>.</p>
+<hr />
+<h1 id="4-verify-vs-code-environment">4. Verify VS Code Environment</h1>
+<p>Open the VS Code terminal.</p>
+<p>The terminal should automatically open as a WSL terminal.</p>
+<p>Verify the project location:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
 
-which<span class="w"> </span>python<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python</span>
-python<span class="w"> </span>--version<span class="w"> </span><span class="c1"># Python 3.12.3</span>
+<span class="c1"># Expected:</span>
+<span class="c1"># /mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems</span>
+</code></pre></div>
+<hr />
+<h2 id="verify-python">Verify Python</h2>
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python
 
-which<span class="w"> </span>mkdocs<span class="w"> </span><span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs</span>
-mkdocs<span class="w"> </span>--version<span class="w"> </span><span class="c1"># mkdocs, version 1.6.1 from /home/aaron/venvs/StaticWebpage_Life-Systems/lib/python3.12/site-packages/mkdocs (Python 3.12)</span>
+<span class="c1"># Expected:</span>
+<span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/python</span>
+</code></pre></div>
+<p>Check version:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>--version
 
-mkdocs<span class="w"> </span>serve
-</code></pre></div></p>
-<h2 id="making-changes-to-files-and-folders">Making changes to files and folders</h2>
-<p>Upon making any changes, push changes to GitHub then re-deploy them
+<span class="c1"># Expected:</span>
+<span class="c1"># Python 3.12.3</span>
+</code></pre></div>
+<hr />
+<h2 id="verify-mkdocs">Verify MkDocs</h2>
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>mkdocs
+
+<span class="c1"># Expected:</span>
+<span class="c1"># /home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs</span>
+</code></pre></div>
+<p>Check version:</p>
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>--version
+
+<span class="c1"># Expected:</span>
+<span class="c1"># mkdocs, version 1.6.1 from /home/aaron/venvs/StaticWebpage_Life-Systems/lib/python3.12/site-packages/mkdocs (Python 3.12)</span>
+</code></pre></div>
+<hr />
+<h1 id="5-run-local-development-server">5. Run Local Development Server</h1>
+<p>Start the MkDocs development server:</p>
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>serve
+</code></pre></div>
+<p>The website will be available locally at:</p>
+<div class="highlight"><pre><span></span><code>http://127.0.0.1:8000
+</code></pre></div>
+<p>Changes made to Markdown files will automatically refresh.</p>
+<hr />
+<h1 id="6-updating-website-files">6. Updating Website Files</h1>
+<p>After making changes:</p>
+<h2 id="stage-changes">Stage changes</h2>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;...&quot;</span>
-git<span class="w"> </span>push
-mkdocs<span class="w"> </span>gh-deploy
+</code></pre></div>
+<h2 id="commit-changes">Commit changes</h2>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Describe changes made&quot;</span>
+</code></pre></div>
+<h2 id="push-source-files-to-github">Push source files to GitHub</h2>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span><span class="c1"># Updates your code and markdown files on GitHub `main`</span>
+</code></pre></div>
+<h2 id="deploy-website-and-start-server">Deploy website and start server</h2>
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span><span class="c1"># Updates your website</span>
+
 mkdocs<span class="w"> </span>serve
+</code></pre></div>
+<div class="admonition abstract">
+<p class="admonition-title"><code>mkdocs gh-deploy</code> performs three actions</p>
+<p><strong>1. Builds the website</strong></p>
+<p>Converts Markdown source files into a complete static website:</p>
+<div class="highlight"><pre><span></span><code>Markdown → HTML/CSS/JavaScript
+</code></pre></div>
+<p><strong>2. Creates or updates the <code>gh-pages</code> branch</strong></p>
+<p>Pushes the generated website files to the branch used by GitHub Pages.</p>
+<div class="highlight"><pre><span></span><code>main branch
+├── docs/
+├── mkdocs.yml
+└── source files
+
+gh-pages branch
+├── index.html
+├── assets/
+└── generated website
+</code></pre></div>
+<p><strong>3. Deploys the website through GitHub Pages</strong></p>
+<p>GitHub Pages detects the updated <code>gh-pages</code> branch and serves the generated website at your public URL.</p>
+</div>
+<hr />
+<h1 id="7-exit-workflow">7. Exit Workflow</h1>
+<h2 id="kill-mkdocs-server">Kill MkDocs Server</h2>
+<p>From whichever terminal the <code>mkdocs serve</code> command was run from.
+<div class="highlight"><pre><span></span><code>ctrl<span class="w"> </span>+<span class="w"> </span>c
 </code></pre></div></p>
+<h2 id="close-remote-connection-vs-code">Close remote connection &amp; VS Code</h2>
+<p><code>File &gt; Close remote connection</code><br>
+<code>File &gt; Close Folder</code><br>
+<code>File &gt; Close Window</code><br></p>
+<h2 id="kill-python-virtual-environment">Kill Python Virtual Environment</h2>
+<p>Using same wsl terminal that you started VS Code from:
+<div class="highlight"><pre><span></span><code>deactivate
+</code></pre></div></p>
+<h1 id="8-common-workflow">8. Common Workflow</h1>
+<p>Normal editing cycle:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/venvs/StaticWebpage_Life-Systems/bin/activate
+
+<span class="nb">cd</span><span class="w"> </span>/mnt/c/users/aaron/engineering/projects/StaticWebpage_Life-Systems
+
+code<span class="w"> </span>.
+
+mkdocs<span class="w"> </span>serve
+</code></pre></div>
+<p>After completing changes:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update documentation&quot;</span>
+git<span class="w"> </span>push
+
+mkdocs<span class="w"> </span>gh-deploy
+</code></pre></div>
+<hr />
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="mkdocs-command-not-found">MkDocs command not found</h2>
+<p>Check the virtual environment:</p>
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>mkdocs
+</code></pre></div>
+<p>If it does not point to:</p>
+<div class="highlight"><pre><span></span><code>/home/aaron/venvs/StaticWebpage_Life-Systems/bin/mkdocs
+</code></pre></div>
+<p>reactivate the environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/venvs/StaticWebpage_Life-Systems/bin/activate
+</code></pre></div>
+<hr />
+<h2 id="vs-code-using-windows-python">VS Code using Windows Python</h2>
+<p>Confirm VS Code is connected to WSL.</p>
+<p>The bottom-left corner should show:</p>
+<div class="highlight"><pre><span></span><code>WSL: Ubuntu
+</code></pre></div>
+<p>The Python interpreter should be:</p>
+<div class="highlight"><pre><span></span><code>/home/aaron/venvs/StaticWebpage_Life-Systems/bin/python
+</code></pre></div>
 
 
 
