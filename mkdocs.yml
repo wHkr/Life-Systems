@@ -116,6 +116,9 @@ nav:
       - Overview: aaron/engineering-lab/overview.md
       - Relationship Diagrams: aaron/engineering-lab/relationship-diagrams.md
       - UI Components: aaron/engineering-lab/ui-components.md
+      - System Administration:
+        - aaron/engineering-lab/system-administration/software-trust-verification.md
+        - aaron/engineering-lab/system-administration/windows-folder-diagnostics.md
       - Engineering Design System:
         - aaron/engineering-lab/engineering-design-system/buttons.md
         - aaron/engineering-lab/engineering-design-system/challenge-cards.md
