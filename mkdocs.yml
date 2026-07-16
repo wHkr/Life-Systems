@@ -26,6 +26,8 @@ nav:
   - Home: index.md
 
   - Aaron:
+    - MkDocs:
+      - aaron/mkdocs/making-adjustments.md
     - 3D Printing:
       - aaron/3d-printing/processes.md
       - aaron/3d-printing/filaments.md
