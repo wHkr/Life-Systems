@@ -75,6 +75,7 @@ nav:
         - aaron/ai/lab/troubleshooting.md
         - aaron/ai/lab/lessons-learned.md
       - aaron/ai/overview.md
+      - aaron/ai/ai-stack.md
       - aaron/ai/docker.md
       - aaron/ai/memory.md
       - aaron/ai/models.md
